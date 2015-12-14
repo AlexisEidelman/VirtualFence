@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 import os
 import csv
 import pandas as pd
 
 script_dir = os.path.realpath(os.path.dirname(__file__))
 
-csv_file_path = os.path.join(script_dir, 'extract.csv')
+csv_file_path = os.path.join(script_dir, 'data', 'extract.csv')
 tab = pd.read_csv(csv_file_path)
 
 init_js =  ''' "type": "Feature",
@@ -58,7 +58,7 @@ def clean_table(tab):
 
 def transform_to_js(tab, name_js, limit_len_inf = 1, limit_len_sup = None):
     if len(tab) >= limit_len_inf:
-        with open(name_js + '.js', mode='w') as f:
+        with open("data\\" + name_js + '.js', mode='w') as f:
             f.write('var ' + name_js + ' = { \n' + init_js)   
             timestamps = []
             if limit_len_sup is not None:

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on Sat Dec 05 17:38:44 2015
 
@@ -66,4 +66,4 @@ test.rename(columns={
 test['timestamp'] = pd.to_datetime(test.timestamp_1).astype(np.int64)
 test['timestamp'] = (test['timestamp']/1e6).astype(np.int64)
 #del test['timestamp_1']
-test.to_csv('extract.csv', index=False)
+test.to_csv('data/extract.csv', index=False)
