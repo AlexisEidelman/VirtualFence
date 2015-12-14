@@ -10,6 +10,8 @@ L.Playback.TickPoint = L.Class.extend({
 
     var sampleTimes = geoJSON.properties.time;
     var samples = geoJSON.geometry.coordinates;
+    console.log(samples.length)
+    console.log(sampleTimes.length)
     var currSample = samples[0];
     var nextSample = samples[1];
     var t = currSampleTime = sampleTimes[0]; // t is used to iterate through tick times
@@ -69,7 +71,7 @@ L.Playback.TickPoint = L.Class.extend({
         this._ticks[t] = this._interpolatePoint(currSample, nextSample, ratio);
         t += tickLen;
       }
-    } 
+    }
 
     // the last t in the while would be past bounds
     this._endTime = t - tickLen;

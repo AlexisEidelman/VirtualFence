@@ -15,7 +15,9 @@ $(function() {
     isPlaying = true;
   });
 
-  demoTracks = [blodgett, blueMountain, drive, houseToCoordley, tillicum];
+  //demoTracks = [blodgett, blueMountain, drive, houseToCoordley, tillicum, id_600156101];
+  demoTracks = [blodgett, blueMountain];
+  //demoTracks = [id_600156101, id_600146104, id_600144101, id_600122102];
 
 	//creates a new map
 	map = new L.Map('map', {zoomControl:false});
@@ -28,7 +30,7 @@ $(function() {
 	});
 
 	//centers map and default zoom level
-	map.setView([44.44751, -123.49], 10);
+	map.setView([48.85, 2.34], 8);
 
 	//adds the background layer to the map
 	map.addLayer(basemapLayer);
@@ -142,7 +144,7 @@ $(function() {
       playback.setCursor(ts);
       $('#time-slider').slider('value', ts);
     }
-  }); 
+  });
 
   $('#date-input').on('keyup', function(e) {
     $('#calendar').datepicker('setDate', $('#date-input').val());
@@ -156,7 +158,7 @@ $(function() {
   $('#timepicker').timepicker({
     showSeconds: true
   });
-  $('#timepicker').timepicker('setTime', 
+  $('#timepicker').timepicker('setTime',
       new Date(playback.getTime()).toTimeString());
 
   $('#timepicker').timepicker().on('changeTime.timepicker', function(e) {
@@ -291,7 +293,7 @@ function triggerFired(trigger) {
   console.log('triggerFired');
   console.log(trigger);
 
-  var html = 
+  var html =
 '<div class="accordion-inner">' +
 '  <strong>'+trigger.place.name+'</strong>' +
 '  <span class="broadcast-time">'+ trigger.display_date + '</span>' +
@@ -346,7 +348,7 @@ function save(data, name) {
   var url = (window.webkitURL != null ? window.webkitURL : window.URL);
   downloadLink.href = url.createObjectURL(blob);
   downloadLink.download = name || 'data.json';
-  downloadLink.click();   
+  downloadLink.click();
 }
 
 function sliceData(data, start,end) {
