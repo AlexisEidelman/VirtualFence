@@ -20,7 +20,7 @@ $(function() {
   demoTracks = [id_600156108, id_600146101, id_600144101, id_600122102];
 
 	//creates a new map
-	map = new L.Map('map', {zoomControl:false});
+	map = new L.Map('map', {zoomControl:true});
 
   // var basemapURL = 'http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}';
 	var basemapURL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';

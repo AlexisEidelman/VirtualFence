@@ -13,7 +13,7 @@ L.Playback.Clock = L.Class.extend({
   },
 
   options: {
-    tickLen:    250,
+    tickLen:    1000,
     speed:      1
   },
 
@@ -30,8 +30,8 @@ L.Playback.Clock = L.Class.extend({
   start: function () {
     if (this._intervalID) return;
     this._intervalID = window.setInterval(
-      this._tick, 
-      this._transitionTime, 
+      this._tick,
+      this._transitionTime,
       this);
   },
 
