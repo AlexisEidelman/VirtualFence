@@ -16,8 +16,8 @@ $(function() {
   });
 
   //demoTracks = [blodgett, blueMountain, drive, houseToCoordley, tillicum, id_600156101];
-  demoTracks = [blodgett, blueMountain];
-  //demoTracks = [id_600156101, id_600146104, id_600144101, id_600122102];
+  //demoTracks = [blodgett, blueMountain];
+  demoTracks = [id_600156108, id_600146101, id_600144101, id_600122102];
 
 	//creates a new map
 	map = new L.Map('map', {zoomControl:false});
